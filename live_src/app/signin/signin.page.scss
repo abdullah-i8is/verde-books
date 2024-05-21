@@ -1,0 +1,30 @@
+.ButtonState{display:none}
+.Button{padding:3px; margin:4px; background:#3ccb934d; cursor:pointer;color: #167952;padding: 15px 55px 15px 55px;}
+.ButtonState:checked + .Button{background:#3CCB93;color: #fff;}
+
+
+	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #167952;
+			}
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			   color:    #167952;
+			   opacity:  1;
+			}
+			::-moz-placeholder { /* Mozilla Firefox 19+ */
+			   color:    #167952;
+			   opacity:  1;
+			}
+			:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			   color:    #167952;
+			}
+			::-ms-input-placeholder { /* Microsoft Edge */
+			   color:    #167952;
+			}
+
+			::placeholder { /* Most modern browsers support this now. */
+			   color:    #167952;
+			}
+
+ .bg{
+ 	--background: url(../../assets/images/Group1000.png) 0 0/100% 100% no-repeat;
+  }			

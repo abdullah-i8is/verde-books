@@ -1,0 +1,146 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar class="bgmain">
+      <ion-row class="mgtop30px paddingbottom27px">
+        <ion-col size="12" offset-md="1" size-md="2">
+          <div class="logo"></div>
+        </ion-col>
+        <ion-col size="8" offset-md="1" size-md="4" lines="none">
+          <ion-item class="search mgtop10px" >
+            <ion-input></ion-input>
+            <div class="searchicon"></div>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="4" offset-md="1" size-md="2" lines="none">
+          <div class="displayflex ion-float-end mgtop20px">
+            <div class="bellicons"><span class="bage">2</span></div>
+            <div class="bulding mgleft30px"><span class="bage2"></span></div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-header>
+  <ion-row class="mgtop50px">
+    <ion-col size="6" offset-md="1" size-md="5">
+      <ion-item lines="none" class="paddingstart mgtop10px">
+        <ion-label class="runpayroll ion-text-left">
+          Run Payroll: <span>Every Friday</span>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6" size-md="5">
+      <ion-item lines="none" class="paddingstart mgtop10px">
+        <ion-avatar slot="end" class="bodor">
+          <img src="../../../assets/images/Close-2.png" />
+        </ion-avatar>
+        <ion-label class="runpayroll ion-text-end">
+          Close
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="mgtop42px">
+    <ion-col size="5" size-md="1" offset-md="1" class="mgtop20px">
+      <ion-label class="labelheading">Pay From</ion-label>
+      <ion-item class="mgtop10px bodor6px" lines="none">
+        <ion-select  class="width100per place" value="nes">
+          <ion-select-option value="nes" >TD</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="5" size-md="2" class="mgtop50px mgleft16px">
+      <ion-item lines="none">
+        <ion-label class="labelheading fontsize20px">Balance <span class="fontlight">$1,000,000.10</span></ion-label>
+      </ion-item>
+    </ion-col>
+
+
+    <ion-col size="5" size-md="3" class="mgtop20px">
+      <ion-label class="labelheading">Pay From</ion-label>
+      <ion-item class="mgtop10px bodor6px" lines="none">
+        <ion-select class="width100per place" value="nes">
+          <ion-select-option value="nes" >TD</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="5" size-md="1" offset-md="1"  class="mgtop20px">
+      <ion-label class="labelheading">Pay Date</ion-label>
+      <ion-item lines="none" button="true" id="open-date-input6" class="mgtop10px bodor6px">
+        <ion-text slot="start" class="colorwhite inputfont">23/4/2022</ion-text>
+        <ion-popover trigger="open-date-input6" show-backdrop="true">
+          <ng-template>
+            <ion-datetime
+              #popoverDatetime5
+              presentation="date"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+    </ion-col>
+    <ion-col size="5" size-md="2" class="mgleft16px">
+      <ion-item lines="none">
+        <ion-label class="labelheading mgtop20px ion-margin ion-text-end">
+          <div class="fontsize22px">Total</div>
+          <div class="mgtop20px totalfont">$3,00.00</div>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+
+
+  <div style="overflow-x:auto;" class="mgtop82px paddingbottom200px">
+    <table>
+      <tr>
+        <th class="width5per"><ion-checkbox class="check"></ion-checkbox></th>
+        <th class="width10px">Employee</th>
+        <th class="width10px">Pay Method</th>
+        <th class="width10px">Regularly pay HRS</th>
+        <th class="width10px">Ot HRS</th>
+        <th class="width10px">Vacation Pay HRS</th>
+        <th class="width10px">Stat Holiday Pay HRS</th>
+        <th class="width10px">Bonus</th>
+        <th class="width10px">Memo</th>
+        <th>Total HRS</th>
+        <th>Total Amount</th>
+      </tr>
+      <tr>
+        <td><ion-checkbox class="check"></ion-checkbox></td>
+        <td class="borderright fontsize18px">Sing Baljit</td>
+        <td class="borderright fontsize18px">Cheque</td>
+        <td class="borderright"><ion-input class="places"></ion-input></td>
+        <td class="borderright fontsize18px">-</td>
+        <td class="borderright fontsize18px">4:00 %</td>
+        <td class="borderright"><ion-input class="places"></ion-input></td>
+        <td class="borderright fontsize18px">-</td>
+        <td class="borderright"><ion-input class="places"></ion-input></td>
+        <td class="borderright fontsize18px">20.00</td>
+        <td class="borderright fontsize18px bold">$ 300.00</td>
+      </tr>
+    </table>
+  </div>
+
+
+
+
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="bgmain paddingt30px baddingbot30px">
+    <ion-row>
+      <ion-col offset="1" size="5">
+        <ion-button   class="btoutline">Back</ion-button>
+      </ion-col>
+
+      <ion-col size="5">
+        <ion-button class="btdone" routerLink="/review">Preview Payroll</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

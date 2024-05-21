@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="assets/images/Group.png">
+    </ion-buttons>
+    <ion-searchbar></ion-searchbar>
+  <!--   <ion-buttons slot="end">
+      <img class="noti" src="assets/images/Group 661.png">
+      <img class="admin" src="assets/images/Group 663.png">
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p style="    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10%;
+    margin-top: 8%;">Select Pay Schedule for this Payroll.</p>
+  <!-- <img style="    position: relative;
+    margin-left: auto;
+    left: 0;
+    display: block;
+    margin-top: -54px;
+    margin-bottom: 50px;
+    margin-right: 45px;cursor: pointer;" (click)="myBackButton()" src="assets/images/Group 785.png"> -->
+
+  <ion-list style="    width: 400px;margin-left: 10%;">
+  <ion-radio-group value="biff">
+    <ion-item>
+      <ion-label>Every Friday  (613 Employes)</ion-label>
+      <ion-radio slot="start" value="biff"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Monthly  (2452 Employes)</ion-label>
+      <ion-radio slot="start" value="griff"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Semi - Monthly  (1226 Employes)</ion-label>
+      <ion-radio slot="start" value="buford"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+<div style="    background-color: #241f35;
+    padding: 25px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;">
+  <img (click)="myBackButton()" style="cursor: pointer;" src="assets/images/Group 746.png">
+  <img routerLink="/every-friday" style="    float: right;cursor: pointer;" src="assets/images/Group 747 (1).png">
+</div>
+</ion-content>

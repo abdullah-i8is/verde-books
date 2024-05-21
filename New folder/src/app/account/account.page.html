@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="assets/images/Group.png">
+    </ion-buttons>
+    <!-- <ion-searchbar></ion-searchbar> -->
+    <!-- <ion-buttons slot="end">
+      <img class="noti" src="assets/images/Group 661.png">
+      <img class="admin" src="assets/images/Group 663.png">
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <ion-grid>
+    <ion-row>
+       <ion-col size="4">
+       <div style="    margin-left: 90px;
+    margin-top: 155px;"></div><br>
+        <div style="    margin-left: 20px;
+    margin-top: 35px;">
+          <!-- <div style="margin-top: 60px;" class="sidebtn"><img style="margin-right: 20px;
+            margin-left: 4px;" src="assets/images/Group 677.png"><span>Dashboard</span><ion-icon style="margin-left: 103px;" class="sideicon21" name="chevron-forward-outline"></ion-icon></div>
+          <div class="sidebtn" routerLink="/employees" style="cursor: pointer;"><img style="    margin-right: 18px;" src="assets/images/Group 680.png"><span>Employees</span><ion-icon class="sideicon21" name="chevron-forward-outline"></ion-icon></div>
+          <img class="dbbtn" src="assets/images/Group 712 (1).png">
+          <div class="sidebtn" routerLink="/paychecklist" style="cursor: pointer;"><img style="    margin-right: 20px;    margin-left: 2px;" src="assets/images/Group 678.png"><span>Paycheque list</span><ion-icon class="sideicon23" name="chevron-forward-outline"></ion-icon></div>
+          <div routerLink="/account" style="cursor: pointer;" class="sidebtn"><img style="    margin-right: 15px" src="assets/images/Group 679 (1).png"><span>My Accountants</span><ion-icon class="sideicon24" style="margin-left: 57px;" name="chevron-forward-outline"></ion-icon></div> -->
+          <img routerLink="/dashboard"  style="cursor: pointer;    width: 280px;" src="assets/menu/Group 986.png"> <br>
+          <img routerLink="/employees"  style="cursor: pointer;    width: 280px;" src="assets/menu/Group 719.png"> <br>
+          <img routerLink="/payrol"  style=" cursor: pointer;   width: 280px;" src="assets/menu/Group 712.png"> <br>
+          <img routerLink="/report"  style=" cursor: pointer;   width: 280px;" src="assets/menu/Group 721.png"> <br>
+          <img routerLink="/accountants"  style=" cursor: pointer;   width: 280px;" src="assets/menu/Group 722.png"> <br>
+          <img routerLink="/account"  style="  cursor: pointer;  width: 280px;" src="assets/menu/menu/Group 832.png"> <br>
+          <img routerLink="/signin"  style="  cursor: pointer;  margin-left: 90px;margin-top: 175px;" routerLink="/signin" src="assets/images/Group 6781.png">
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <img class="dbtitle" src="assets/images/Group 8321.png">
+        <p style="color:#3CCB93;margin-top: 15px;margin-bottom: 15px;">Your Bank is Connected Successfully!</p>
+        <img style="margin-top: 10px;margin-bottom: 15px;" src="assets/images/Grouppp.png">
+
+        <div style="    margin-top: 20px;
+    border: solid 1px #fff;
+    width: 500px;
+    border-radius: 14px;
+    padding: 17px;">
+           <img src="assets/images/Group 957.png">
+           <!-- <img src="assets/images/Group 668.png">  -->
+           <p style="    color: #fff;
+    margin-top: 50px;
+    margin-bottom: -39px;">Balance ${{totalamount*2}}</p>
+           <p style="color: #3CCB93;
+    text-align: right;">updated on {{formattedDate}}</p>
+        </div>
+        <div style="    margin-top: 20px;
+    border: solid 1px #fff;
+    width: 500px;
+    border-radius: 14px;
+    padding: 17px;">
+           <img src="assets/images/Group 958.png">
+           <p style="color: #fff;
+    margin-top: 50px;
+    margin-bottom: -33px;">$ {{totalamount}}</p>
+           <img (click)="addbox('true')" style="position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    display: block;" src="assets/images/Group 898.png">
+        </div> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="boxaccount == 'true'" style=" position: absolute;
+    right: 12%;
+    bottom: -80px;
+    border: solid 1px #3dcb93;
+    color: #fff;
+    padding: 35px 70px 46px 70px;
+    border-radius: 10px;
+    text-align: center;"> 
+         <ion-input [(ngModel)]="amount" type="number" style="border: solid #3dcb93 1px;" placeholder="Enter Amount"></ion-input>
+         <button (click)="addallemployes()" style="    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #3dcb93;
+    margin-top: 40px;
+    margin-right: 10px;">Add</button>
+         <button (click)="addbox('false')" style="    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;">Cancel</button>
+       </div>
+</ion-content>

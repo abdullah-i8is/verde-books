@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <img class="logo" src="assets/images/Group.png"> -->
+      <p style="    font-size: 20px;
+    font-weight: bold;
+    margin-top: 38px;
+    margin-left: 40px;">Run Payroll :<span style="color:#3CCB93"> Every Friday</span></p>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      <!-- <img class="noti" src="assets/images/Setting 1.png"> -->
+      <!-- <img  style="    margin-right: 30px;" src="assets/images/Help 1 (2).png"> -->
+      <!-- <img class="admin" (click)="myBackButton()" style="cursor: pointer;" src="assets/images/Close 1 (2).png"> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <img style="position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    margin-top: 60px;" src="assets/images/Group 949.png"> 
+    <p style="text-align: center;">{{totalval}} paycheque to write Deliver Cheques to your employees by {{today}}</p>
+    <img (click)="printing()" style="position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 35px;cursor:pointer;" src="assets/images/Group 9331.png">
+    <!-- <img style="position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 35px;margin-bottom: 50px;" src="assets/images/Group 942.png"> -->
+
+    <ion-grid style="text-align: center;margin-top: 10px;margin-bottom: 100px;">
+     <ion-row>
+      <ion-col size="3">
+        <!-- <p>EMPLOYEE</p> -->
+      </ion-col>
+      <ion-col style="border-top: solid 1px #000;
+    border-right: solid 1px #000;
+    border-bottom: solid 1px #000;" size="2">
+        <p>EMPLOYEE</p>
+      </ion-col>
+      <ion-col style="border-top: solid 1px #000;
+      border-right: solid 1px #000;
+    border-bottom: solid 1px #000;" size="2">
+        <p>NET PAY</p>
+      </ion-col>
+      <ion-col style="border-top: solid 1px #000;
+    border-bottom: solid 1px #000;" size="2">
+        <p>Print</p>  
+      </ion-col>
+       <ion-col size="3">
+        <!-- <p>EMPLOYEE</p> -->
+      </ion-col>
+    </ion-row>   
+    <ion-row *ngFor="let rev of values">
+       <ion-col size="3">
+        <!-- <p>EMPLOYEE</p> -->
+      </ion-col>
+      <ion-col style="border-top: solid 1px #000;
+    border-right: solid 1px #000;
+    border-bottom: solid 1px #000;" size="2">
+        <p>{{rev.name}}</p>
+      </ion-col>
+      <ion-col style="border-top: solid 1px #000;
+      border-right: solid 1px #000;
+    border-bottom: solid 1px #000;" size="2">
+        <p>${{rev.NetPay}}</p>
+      </ion-col>
+         <ion-col style="border-top: solid 1px #000;
+    border-bottom: solid 1px #000;" size="2">
+         <!-- <button (click)="printemp('1')">Print</button> -->
+         <a style="margin-top: 15px;
+    position: absolute;
+    color: #3ccb93;" href="https://verdebooks.com:{{port}}/api/printStub/{{rev.id}}-{{rev.organization}}" target="_blank" rel="noopener noreferrer">Print</a>  
+      </ion-col>
+       <ion-col size="3">
+        <!-- <p>EMPLOYEE</p> -->
+      </ion-col>
+    </ion-row>   
+  </ion-grid> 
+<div style="    background-color: #241f35;
+    padding: 25px;
+     position: fixed; 
+    width: 100%;
+    bottom: 0;
+    height: 60px;">
+  <!-- <img src="assets/images/Group 746 (1).png"> -->
+  <p style="text-align: center;
+    color: #fff;
+    margin: 0;
+    margin-bottom: -32px">View payroll reports</p>
+  <img routerLink="/payrol" style="    float: right;cursor: pointer;" src="assets/images/Group 948 (1).png">
+</div>
+</ion-content>

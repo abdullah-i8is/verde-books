@@ -1,0 +1,529 @@
+<ion-header>
+  <ion-toolbar style="    padding-top: 22px;
+    padding-left: 20px;">
+    <ion-buttons slot="start">
+      <img class="logo" src="assets/images/Group 912.png">
+      <span class="employetit">Add Employee</span>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <img class="noti" src="assets/images/Help 1 (1).png">
+      <img class="admin" (click)="myBackButton()" src="assets/images/Close 1 (1).png">
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+ <div style="    background: #241F35;
+    margin-top: -30px;">  
+  <div style="color:#fff;width: 66%;
+    margin-left: 18%;
+    margin-top: 30px;">
+    <div style="text-align: center;    margin-bottom: 20px;">
+        <button class="headerbtn" style="margin-left: 15px;" [class.btn-color]="emp == 'emp'" (click)="changetab('emp')">Pay</button>
+        <button class="headerbtn" style="margin-left: 15px;" [class.btn-color]="emp == 'profile'" (click)="changetab('profile')">Profile</button>
+        <button class="headerbtn" style="margin-left: 15px;" [class.btn-color]="emp == 'bank'" (click)="changetab('bank')">Employment</button>
+       <!--  <p style="display:inline-block;margin-left: 20px;">Profile</p>
+        <p style="display:inline-block;margin-left: 20px;">Employment</p> -->
+    </div>
+    <div *ngIf="emp == 'emp'">
+    <div style="    border: solid 1px #fff;
+    padding: 30px;">
+      <div>
+        <img style="    display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 913.png"><span style="margin-left:10px">Personal Info</span>
+      </div>
+      <ion-grid style="    margin-top: 10px;
+    margin-bottom: 35px;">
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Name</p>
+          </ion-col>
+          <ion-col size="2">
+            <p>M.I.</p>
+          </ion-col>
+          <ion-col size="5">
+            <p>Last name</p>
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <ion-input [(ngModel)]="firstname" class="inputtype" placeholder="Enter Firstname"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <ion-input [(ngModel)]="mi" placeholder="Enter MI" class="inputtype" ></ion-input>
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="lastname" class="inputtype" placeholder="Enter Lastname"></ion-input>
+              <!-- <ion-input [(ngModel)]="mi" placeholder="Enter MI" class="inputtype" ></ion-input> -->
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Hire date</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Email</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5">
+           <ion-item lines="none" style="--background: #241f36;color: #fff;border: solid 1px #fff;border-radius: 5px;height: 41px;" button="true" id="open-date-input6" class="mgtop10px bodor6px">
+              <ion-input style="margin-top: -6px;" [(ngModel)]="hireDate" placeholder="Enter Date"></ion-input>
+              <!-- <ion-text slot="start" class="colorwhite inputfont">{{date}}</ion-text> -->
+              <ion-popover trigger="open-date-input6" show-backdrop="true">
+                <ng-template>
+                  <ion-datetime (ionChange)="callfimction2()" [(ngModel)]="hireDate"
+                    #popoverDatetime5
+                    presentation="date"
+                   
+                  ></ion-datetime>
+                          
+                </ng-template>
+              </ion-popover>
+            </ion-item> 
+            
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" placeholder="Enter Input"></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="email" class="inputtype" placeholder="Enter Email"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <p>We’ll email an invite for this employee to view their pay stubs and T4 online with verdebooks Workforce.</p>
+      <ion-checkbox checked="true"></ion-checkbox>
+      <p>Ask this employee to enter their personal info, paycheque preferences and TD1 forms
+         with verdebooks Workforce.</p>
+    </div>
+    <div style="border: solid 1px #fff;
+    padding: 30px;">
+      <img style="    display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 915.png"><p style="    display: inline-flex;
+    margin-left: 10px;">What are this employee’s tax withholdings?</p>
+      <p s>We’ll invite this employee complete this part via Workspace , our free employee portal. if you want to enter it yourself, uncheck self-setup in the personal info section.</p>
+    </div>
+    <div style="border: solid 1px #fff;
+    padding: 30px;">
+      <img style="display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 916.png">
+      <p style="display: inline-flex;
+    margin-left: 10px;">How often do you pay this employee?</p>
+      <p>We’ll use this to work out your company’s payroll calender.</p>
+      <ion-select [(ngModel)]="startingdate" style="width: 180px;
+        border: solid 1px #fff;
+        text-align: left;display:inline-flex;" placeholder="Select One">
+        <ion-select-option value="Every Friday">Every Friday</ion-select-option>
+        <ion-select-option value="Monthly">Monthly</ion-select-option>
+      </ion-select>
+      <p style="display:inline-flex;margin-left: 10px;">Starting  {{startingdate}}</p>
+      <!-- <img style="display:inline-flex;margin-left: 10px;" src="assets/images/Group (3).png"> -->
+    </div>
+    <div style="border: solid 1px #fff;
+    padding: 30px;">
+      <img style="display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 917.png">
+      <p style="display: inline-flex;
+    margin-left: 10px;">How much do you pay this employee?</p>
+      <p>You can also add other types of pay like overtime, sick or vacation. We call those “pay types”. You’ll see them when you run payroll.</p>
+      <ion-select style="width: 180px;
+        border: solid 1px #fff;
+        text-align: left; display: inline-flex;" placeholder="Select One">
+        <ion-select-option value="f">Hourly</ion-select-option>
+        <!-- <ion-select-option value="m">Weekly</ion-select-option> -->
+      </ion-select>
+      <span style="display: inline-flex;margin-left: 10px;">$</span><ion-input [(ngModel)]="payRate" (ngModelChange)="onChange(payRate)" min="1" type="number" style="display: inline-flex; width: 170px;margin-left: 10px;" placeholder="$10" class="inputtype"></ion-input><span style="margin-left:5px">/hour</span>
+      <p>Default hours:</p><ion-input [(ngModel)]="defaulthours" type="number" placeholder="Enter hours" class="inputtype"></ion-input>
+      <p>hours per day and</p><ion-input [(ngModel)]="hoursperday" type="number" placeholder="Enter hours" class="inputtype"></ion-input>
+      <p>days per week.(optional)</p>
+      <!-- <p>+ Add additional pay types (like overtime, sick, and vacation pay)</p> -->
+    </div>
+    <div style="border: solid 1px #fff;
+    padding: 30px;">
+      <img style="display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 918.png">
+      <p style="display: inline-flex;
+    margin-left: 10px;">Let’s create a new vacation policy for this employee</p>
+      <ion-select style="width: 180px;
+        border: solid 1px #fff;
+        text-align: left;" placeholder="Select One">
+        <ion-select-option value="f">4%</ion-select-option>
+        <ion-select-option value="m">8%</ion-select-option>
+      </ion-select>
+      <!-- <p>+ Create new vacation policy</p> -->
+    </div>
+    <div style="border: solid 1px #fff;
+    padding: 30px;">
+      <img style="display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 919.png">
+      <p style="display: inline-flex;
+    margin-left: 10px;">Does this employee have any deductions or contributions?
+         (ex.retirement, health care)</p>
+         <p>Deduction may include healthcare or retirement plans. Loan repayments can be added here too.</p>
+      <p>No deductions (most common).</p> 
+      <!-- <p>+ Add deduction</p>   -->
+    </div>
+    <div style="border: solid 1px #fff;
+    padding: 30px;">
+      <img style="display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 920.png">
+      <p style="display: inline-flex;
+    margin-left: 10px;">How do you want to pay this employee? </p>
+      <ion-select [(ngModel)]="paymentMethod" style="width: 180px;
+        border: solid 1px #fff;
+        text-align: left;" placeholder="Select One">
+        <ion-select-option value="bank">Bank</ion-select-option>
+        <ion-select-option value="cheque">Cheque</ion-select-option>
+      </ion-select>
+      <p>We’ll invite this employee to complete this part via Workforce, our free employee portal. If you want to enter it yourself, uncheck self-setup in the personal info section</p>
+    </div>
+
+    <div style="border: solid 1px #fff;
+    padding: 30px;">
+      <img style="display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 9201.png">
+      <p style="display: inline-flex;
+    margin-left: 10px;">Stat Premium Pay</p>
+    <br>
+        <button [class.enbdeb]="button_txt == 'enable'" style="    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 45px;
+    background-color: #fff;
+    color: #000;text-transform: uppercase;color:red" (click)="Stat_pay()">{{button_txt}}</button>
+    <p *ngIf="button_txt == 'enable'" style="    margin-left: 266px;
+    position: absolute;
+    margin-top: -74px;">Enter Stat Premium Pay</p>
+    <input *ngIf="button_txt == 'enable'"  style="    width: 151px;
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 109px;    color: #000;" [(ngModel)]="Stat_Premium"  (ngModelChange)="onChange1(Stat_Premium)" min="1" type="number" placeholder="$0">    
+    </div>
+
+  </div>
+  </div>
+  <div *ngIf="emp == 'profile'" style="color:#fff">
+     <div style="    border: solid 1px #fff;
+    padding: 30px; width: 66%;margin-left: 18%;">
+      <div>
+        <img style="    display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 913.png"><span style="margin-left:10px">Personal Info</span>
+      </div>
+      <ion-grid style="    margin-top: 10px;
+    margin-bottom: 35px;">
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Home address</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>City or Town</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <ion-input [(ngModel)]="address" placeholder="Enter Address" class="inputtype"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" ></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="town" placeholder="Enter City/Town" class="inputtype"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Email</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Date Of Birth</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <ion-input [(ngModel)]="email" placeholder="Enter Email" class="inputtype"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" placeholder="Enter Input"></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <!-- <ion-input [(ngModel)]="dob" placeholder="Enter BOB" class="inputtype"></ion-input> -->
+            <ion-item lines="none" style="--background: #241f36;color: #fff;border: solid 1px #fff;border-radius: 5px;height: 41px;" button="true" id="open-date-input6" class="mgtop10px bodor6px">
+              <ion-input style="margin-top: -6px;" [(ngModel)]="dob" placeholder="Enter DOB"></ion-input>
+              <!-- <ion-text slot="start" class="colorwhite inputfont">{{date}}</ion-text> -->
+              <ion-popover trigger="open-date-input6" show-backdrop="true">
+                <ng-template>
+                  <ion-datetime (ionChange)="callfimction()" [(ngModel)]="dob"
+                    #popoverDatetime5
+                    presentation="date"
+                   
+                  ></ion-datetime>
+                          
+                </ng-template>
+              </ion-popover>
+            </ion-item> 
+          </ion-col>
+        </ion-row>
+                <ion-row>
+          <ion-col size="5"> 
+            <p>Postal Code</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Province</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <ion-input [(ngModel)]="postalCode" type="text" placeholder="Enter Postal Code" class="inputtype"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" ></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="provice" placeholder="Enter Province" class="inputtype"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Mobile Number</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Work Number</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <ion-input [(ngModel)]="phn" type="number" placeholder="Enter Mobile Number" class="inputtype"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" placeholder="Enter Input"></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="phn2" type="number" placeholder="Enter Work Number" class="inputtype"></ion-input>
+          </ion-col>
+        </ion-row>
+                <ion-row>
+          <ion-col size="5"> 
+            <p>Gender</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Notes</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <!-- <ion-input [(ngModel)]="gender" placeholder="Enter Gender" class="inputtype"></ion-input> -->
+            <ion-select [(ngModel)]="gender" style="    width: 100%;
+                border: solid 1px #fff;
+                text-align: left;
+                display: inline-flex;
+                border-radius: 5px;" placeholder="Gender">
+              <ion-select-option value="Male">Male</ion-select-option>
+              <ion-select-option value="Female">Female</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" placeholder="Enter Input"></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="notes" placeholder="Enter Notes" class="inputtype"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div> 
+  </div>
+  <div *ngIf="emp == 'bank'" style="color:#fff">
+     <div style="    border: solid 1px #fff;
+    padding: 30px; width: 66%;margin-left: 18%;">
+      <div>
+        <img style="    display: inline-flex;
+    margin-bottom: -10px;" src="assets/images/Group 913.png"><span style="margin-left:10px">Personal Info</span>
+      </div>
+      <ion-grid style="    margin-top: 10px;
+    margin-bottom: 35px;">
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Job Title</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Working Location</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+             <ion-input [(ngModel)]="jobTitle" placeholder="Enter Job Title" class="inputtype"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" ></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="workingLocation" placeholder="Enter Work Location" class="inputtype"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Status</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Hire Date</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <!-- <ion-input [(ngModel)]="status" placeholder="Enter Status" class="inputtype"></ion-input> -->
+            <ion-select [(ngModel)]="status" style="    width: 100%;
+                border: solid 1px #fff;
+                text-align: left;
+                display: inline-flex;
+                border-radius: 5px;" placeholder="Status">
+              <ion-select-option value="Active">Active</ion-select-option>
+              <ion-select-option value="InActive">InActive</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" placeholder="Enter Input"></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <!-- <ion-input [(ngModel)]="hireDate" placeholder="Enter Hire Date" class="inputtype"></ion-input> -->
+             <ion-item lines="none" style="--background: #241f36;color: #fff;border: solid 1px #fff;border-radius: 5px;height: 41px;" button="true" id="open-date-input61" class="mgtop10px bodor6px">
+              <ion-input style="margin-top: -6px;" [(ngModel)]="hireDate" placeholder="Hire Date"></ion-input>
+              <!-- <ion-text slot="start" class="colorwhite inputfont">{{date}}</ion-text> -->
+              <ion-popover trigger="open-date-input61" show-backdrop="true">
+                <ng-template>
+                  <ion-datetime (ionChange)="callfimction2()" [(ngModel)]="hireDate"
+                    #popoverDatetime5
+                    presentation="date"
+                   
+                  ></ion-datetime>
+                          
+                </ng-template>
+              </ion-popover>
+            </ion-item> 
+          </ion-col>
+        </ion-row>
+                <ion-row>
+          <ion-col size="5"> 
+            <p>Birth Date</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <!-- <p>Working Location</p> -->
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <!-- <ion-input [(ngModel)]="dob" placeholder="Enter DOB" class="inputtype"></ion-input> -->
+             <ion-item lines="none" style="--background: #241f36;color: #fff;border: solid 1px #fff;border-radius: 5px;height: 41px;" button="true" id="open-date-input62" class="mgtop10px bodor6px">
+              <ion-input style="margin-top: -6px;" [(ngModel)]="dob" placeholder="DOB"></ion-input>
+              <!-- <ion-text slot="start" class="colorwhite inputfont">{{date}}</ion-text> -->
+              <ion-popover trigger="open-date-input62" show-backdrop="true">
+                <ng-template>
+                  <ion-datetime (ionChange)="callfimction()" [(ngModel)]="dob"
+                    #popoverDatetime5
+                    presentation="date"
+                    
+                  ></ion-datetime>
+                          
+                </ng-template>
+              </ion-popover>
+            </ion-item> 
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" ></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <!-- <ion-input [(ngModel)]="workingLocation" placeholder="Enter Work Location" class="inputtype"></ion-input> -->
+          </ion-col>
+        </ion-row>
+        <h2 style="text-align: center;">Bank Details</h2>
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Account Holder</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Bank Name</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <ion-input [(ngModel)]="accountHolder"  placeholder="Enter Account Holder" class="inputtype"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" placeholder="Enter Input"></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="bankName"  placeholder="Enter Bank Name" class="inputtype"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5"> 
+            <p>Account Number</p>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <p>M.I.</p> -->
+          </ion-col>
+          <ion-col size="5">
+            <p>Branch Name</p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <ion-input [(ngModel)]="accountNumber"  placeholder="Enter Account Number" class="inputtype"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-input class="inputtype" placeholder="Enter Input"></ion-input> -->
+          </ion-col>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="branchName"  placeholder="Enter Branch Name" class="inputtype"></ion-input>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col size="5"> 
+            <p>Bank Location</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">
+            <ion-input [(ngModel)]="bankLocation"  placeholder="Enter Bank Locations" class="inputtype"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <img (click)="canclechangedone()" style="margin-left:30px;margin-top: 30px;margin-bottom: 30px;" src="assets/images/Group 746.png">
+  <img style="float: right;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;" (click)="changedone()" src="assets/images/Group 747.png">
+  </div>
+</ion-content>

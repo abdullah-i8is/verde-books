@@ -1,0 +1,282 @@
+.sc-ion-input-md-h{
+  --padding-bottom: 0px;
+  --padding-top: 0px;
+}
+.bgheader{
+  --background:#241F35;
+  background:#241F35;
+}
+.time{
+  background-image: url("../../assets/images/Time 1.png");
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+  //position: absolute;
+  margin-left: 30px;
+  // margin-top: 30px;
+}
+.invoiceHeading{
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: 500;
+  font-family:Roboto-Medium;
+}
+
+.setting{
+  background-image: url("../../assets/images/Setting 1.png");
+  background-size: 100% 100%;
+  width: 30px;
+  height: 30px;
+  //position: absolute;
+  //margin-left: 1312px;
+  //margin-top: 36px;
+}
+.question{
+  background-image: url("../../assets/images/Help 1.png");
+  background-size: 100% 100%;
+  width: 30px;
+  height: 30px;
+  //position: absolute;
+  //margin-left: 1372px;
+  //margin-top: 36px;
+}
+.close{
+  background-image: url("../../assets/images/Close 1.png");
+  background-size: 100% 100%;
+  width: 30px;
+  height: 30px;
+  //position: absolute;
+  //margin-left: 1452px;
+  //margin-top: 36px;
+}
+.mgright30px{
+  margin-right: 30px;
+}
+.mgtop30px{
+  margin-top: 30px;
+}
+.mgbottom58px{
+  margin-bottom: 58px;
+}
+.paddingbottom58px{
+  padding-bottom: 52px;
+}
+
+.paddingbottom60px{
+  padding-bottom: 66px;
+}
+
+
+.paddingbottom50px{
+  padding-bottom: 50px;
+}
+
+.mgtop52px{
+  margin-top: 52px;
+}
+.mgtop61px{
+  margin-top: 61px;
+}
+.mgleft30px{
+  margin-left: 30px;
+}
+.paddingleft30px{
+  padding-left: 30px;
+}
+.paddingright30px{
+  padding-right: 30px;
+}
+.colorwhite{
+  color: white;
+}
+.mgtop10px{
+  margin-top: 10px;
+}
+.labelheading{
+  font-size: 18px;
+  font-family: Roboto-Medium;
+  font-weight: 500;
+}
+.bgimagelable{
+  background-image: url("../../assets/images/Help 1.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 17px;
+  height: 17px;
+  margin-left: 5px;
+}
+.displayflex{
+  display: flex;
+}
+.width100per{
+  width: 100%;
+}
+.bodor6px{
+  --border-radius: 6px !important;
+  ion-select::part(icon) {
+    color: #359b79;
+    opacity: 1;
+    border-left: 1px solid;
+  }
+}
+.cc{
+  color: #38b184;
+  position: absolute;
+  right: 12px;
+  font-family: Roboto-Light;
+}
+.balance{
+  font-family: Roboto-Regular;
+  font-weight: 400;
+  font-size: 14px;
+}
+.texrcolor{
+  color: #359b79;
+}
+.price{
+  font-size: 35px;
+  font-family: robotobold;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-align: left;
+  // margin-left: 44%;
+}
+.balances{
+  text-align: left;
+  //margin-right: 27%;
+
+}
+.boder6pxSecond{
+  --border-radius: 6px !important;
+  ion-select::part(icon) {
+    color: #359b79;
+    opacity: 1;
+  }
+}
+.colbodor{
+  border: 1px solid #383874;
+  height: 30px;
+  color: #383874;
+  font-family: Roboto-Medium;
+  font-weight: 500;
+  padding: 26px 0px 41px 0px;
+  text-align: center;
+  font-size: 18px;
+}
+.imageDrag{
+  width: 22px;
+}
+.mgto34px{
+  margin-top: 33px;
+}
+.btoutline{
+  --border-color: #3CCB93;
+  --color: #3CCB93;
+  --background-activated: #3CCB93;
+  --background-focused: #3CCB93;
+  font-size: 15px;
+ // height: 50px;
+  font-weight: 500;
+  font-family: Roboto-Medium;
+  text-transform: inherit;
+}
+
+.btoutlinecancle{
+  --color: white;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  font-size: 15px;
+  //height: 50px;
+  font-weight: 500;
+  font-family: Roboto-Medium;
+  --background: transparent;
+  border: 2px solid #3CCB93;
+  border-radius: 5px;
+  text-transform: inherit;
+}
+.btsave{
+  --background: #3CCB93;
+  --background-activated: #3CCB93;
+  --background-focused: #3CCB93;
+  font-size: 15px;
+  //height: 50px;
+  font-family: robotobold;
+  font-width: 700;
+  text-transform: inherit;
+  text-transform: inherit;
+  //--background-image: url("assets/images/Drop-down 1.png");
+}
+.btoutlinemessage{
+  --border-color: #3CCB93;
+  --color: #3CCB93;
+  --background-activated: #3CCB93;
+  --background-focused: #3CCB93;
+  font-size: 16px;
+  height: 50px;
+  font-weight: 400;
+  font-family: Roboto-Regular;
+  width: 100%;
+  text-transform: inherit;
+}
+
+
+.product{
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+}
+.totalprices{
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Roboto-Medium;
+  text-align: right;
+}
+.totalpricesPrs{
+  color: #3CCB93;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Roboto-Medium;
+  text-align: center;
+}
+.colormessage{
+  color: #383874;
+}
+.messagecolorbodor{
+  border-radius: 6px !important;
+  border: 1px solid #383874;
+}
+.bgmessage{
+  width: 20px;
+  // position: absolute;
+}
+.maximum{
+  position: absolute;
+  right: 0px;
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Roboto-Regular;
+}
+.customer{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Roboto-Regular;
+}
+.mg0px{
+  margin: 0px !important;
+}
+.paddingbottom38px{
+  padding-bottom: 38px !important;
+}
+.paddingtop41px{
+  padding-top: 41px !important;
+}
+.mgtop150px{
+  margin-top: 150px;
+}
+.mgtop44px{
+  margin-top: 44px !important;
+}

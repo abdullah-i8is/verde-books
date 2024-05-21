@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="assets/images/Group.png">
+    </ion-buttons>
+    <!-- <ion-searchbar></ion-searchbar> -->
+   <!--  <ion-buttons slot="end">
+      <img class="noti" src="assets/images/Group 661.png">
+      <img class="admin" src="assets/images/Group 663.png">
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <div style="    margin-left: 90px;
+    margin-top: 155px;"></div><br>
+        <div style="    margin-left: 20px;
+    margin-top: 35px;">
+          <!-- <div style="margin-top: 60px;" class="sidebtn"><img style="margin-right: 20px;
+            margin-left: 4px;" src="assets/images/Group 677.png"><span>Dashboard</span><ion-icon style="margin-left: 103px;" class="sideicon21" name="chevron-forward-outline"></ion-icon></div>
+          <div class="sidebtn" routerLink="/employees" style="cursor: pointer;"><img style="    margin-right: 18px;" src="assets/images/Group 680.png"><span>Employees</span><ion-icon class="sideicon21" name="chevron-forward-outline"></ion-icon></div>
+          <img class="dbbtn" src="assets/images/Group 712 (1).png">
+          <div class="sidebtn" routerLink="/paychecklist" style="cursor: pointer;"><img style="    margin-right: 20px;    margin-left: 2px;" src="assets/images/Group 678.png"><span>Paycheque list</span><ion-icon class="sideicon23" name="chevron-forward-outline"></ion-icon></div>
+          <div routerLink="/account" style="cursor: pointer;" class="sidebtn"><img style="    margin-right: 15px" src="assets/images/Group 679 (1).png"><span>My Accountants</span><ion-icon class="sideicon24" style="margin-left: 57px;" name="chevron-forward-outline"></ion-icon></div> -->
+          <img routerLink="/payrol"  style="cursor: pointer;    width: 280px;" src="assets/menu/Group 986.png"> <br>
+          <img routerLink="/employees"  style="cursor: pointer;    width: 280px;" src="assets/menu/menu/Group 719.png"> <br>
+          <img routerLink="/account"  style="  cursor: pointer;  width: 280px;" src="assets/menu/Group 832.png"> <br>
+          <img routerLink="/signin"  style="  cursor: pointer;  margin-left: 90px;margin-top: 175px;" routerLink="/signin" src="assets/images/Group 6781.png">
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <div>
+           <ion-grid>
+            <ion-row>
+              <ion-col size="3">
+                <img routerLink="/payshed" style="cursor: pointer;" src="assets/images/Group 727.png">
+              </ion-col>
+              <ion-col size="4">
+                <!-- <p style="color:#fff;text-align: left;margin-left: 15px;">Next Payroll due <span style="color: #3dcb93;">Thusday, 15/4/2020</span></p> -->
+              </ion-col>
+              <ion-col size="5">
+                <img class="view" routerLink="/paychecklist" style="cursor: pointer;" src="assets/images/Group 827.png">
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="3">
+                <ion-searchbar (ionChange)="getItems($event)" style="    border: solid 1px #fff;
+    color: #fff;
+    border-radius: 9px !important;
+    --background: transparent !important;margin-top: 20px;margin-bottom: 20px;"></ion-searchbar>
+              </ion-col>
+              <ion-col size="4">
+                <ion-select [(ngModel)]="empstatus" style="color: #fff;
+    border: solid 1px;
+    padding: 19px;
+    margin-top: 20px;
+    border-radius: 12px;
+    margin-left: 50px;" placeholder="Select One">
+                  <ion-select-option value="Active">Active</ion-select-option>
+                  <ion-select-option value="InActive">Inactive</ion-select-option>
+                  <ion-select-option value="All">All Employees</ion-select-option>
+                </ion-select>
+              </ion-col>
+              <ion-col size="5">
+                <img class="addemp" routerLink="/addemp" style="cursor: pointer;" src="assets/images/Group730.png">
+              </ion-col>
+            </ion-row>
+            <ion-row style="border: solid 2px #167952;
+    color: #fff;
+    padding: 12px;
+    background-color: #167952;">
+              <ion-col size="2">
+                NAME
+              </ion-col>
+              <ion-col size="2">
+                PAY RATE
+              </ion-col>
+              <ion-col size="2">
+                PAY METHOD
+              </ion-col>
+              <ion-col size="3">
+                JOB TITLE
+              </ion-col>
+              <ion-col size="3">
+                STATUS
+              </ion-col>
+            </ion-row>
+            <ion-spinner *ngIf="items.length < 1" style="    color: #fff;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;" name="lines"></ion-spinner>
+            <ion-row  (click)="callempdetail(emp)" [class.statusdesign]="empstatus != 'All' && (emp.status != empstatus)" *ngFor="let emp of items" style="    border: solid 1px #177952;
+            margin-top: 10px;
+    color: #fff;
+    padding: 15px;cursor: pointer;">
+              <ion-col size="2">
+                {{emp.name}}
+              </ion-col>
+              <ion-col size="2">
+               {{emp.payRate}}
+              </ion-col>
+              <ion-col size="2">
+                {{emp.paymentMethod}}
+              </ion-col>
+              <ion-col size="3">
+                {{emp.jobTitle}}
+              </ion-col>
+              <ion-col size="3">
+                <!-- STATUS -->
+                {{emp.status}}
+              </ion-col>
+            </ion-row>
+           </ion-grid>  
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

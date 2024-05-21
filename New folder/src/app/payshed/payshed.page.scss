@@ -1,0 +1,179 @@
+.bg{
+  --background: #241F35;
+}
+ion-header {
+  height: 100px; 	
+  ion-toolbar {
+  	height: 100px;
+    --background: #241F35;
+    --color: #fff;
+  }
+}
+.logo{
+	    padding: 35px;
+    width: 250px;
+}
+.noti{
+	margin-left: 110px;
+    margin-right: 25px;
+}
+.admin{
+	margin-right: 50px;
+}
+ion-toolbar.sc-ion-searchbar-md-h, ion-toolbar .sc-ion-searchbar-md-h{
+	width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    --background: #585173;
+    --color: #fff;
+}
+.addnewbtn{
+	margin-left: 90px;
+    margin-top: 85px;
+}
+.dbtitle{
+	margin-top: 90px;
+	display: block;
+}
+.dbbtn{
+	margin-left: 90px;
+    /*margin-top: 60px;	*/
+}
+.sideicon1{
+	margin-right: 30px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: #3CCB93;
+}
+.sideicon2{
+	margin-right: 30px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: #3CCB93;
+}
+.sideicon3{
+	margin-right: 30px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: #3CCB93;
+}
+.sideicon4{
+	margin-right: 30px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: #3CCB93;
+}
+.sideicon21{
+	margin-left: 100px;
+	font-size: 25px;
+	color: #3CCB93;
+}
+.sideicon22{
+	margin-left: 128px;
+	font-size: 25px;
+	color: #3CCB93;
+}
+.sideicon23{
+	margin-left: 120px;
+	font-size: 25px;
+	color: #3CCB93;
+}
+.sideicon24{
+	margin-left: 60px;
+	font-size: 25px;
+	color: #3CCB93;
+}
+.sidebtn{
+	color: #fff;
+    margin-left: 80px;
+    margin-top: 15px;
+    margin-bottom: 15px;	
+}
+.sidebtn span{
+	vertical-align: super;	
+}
+.banking{
+	margin-left: 90px;
+}
+.box1{
+	background-color: #fff;
+    width: 400px;
+    text-align: center;
+    height: 220px;
+    border-radius: 14px;
+    padding-top: 50px;
+    margin-top: 20px;
+    display: inline-block;
+    margin-right: 30px;
+}
+.accounts{
+	color: #fff;
+    margin-top: 25px;
+}
+.maleimg{
+	width: 70px;
+    height: 70px;
+    border-radius: 47px;
+    border: solid 2px #fff;
+    padding: 7px;
+}
+.maletit{
+	color: #fff;
+    margin-left: 7px;
+}
+.lastbox{
+	/*background-color: #fff;*/
+    width: 803px;
+    border-radius: 15px;
+}
+.sigmentbtn1{
+      color: #fff;
+    border-bottom: solid 2px;
+    width: 100px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.sigmentbtn{
+      color: #fff;
+    /*border-bottom: solid 2px;*/
+    width: 100px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.btn{
+ position: absolute;
+    left: 0;
+    margin-top: 145px;
+    margin-left: 40px; 
+}
+.view{
+      position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    display: block;
+}
+.addemp{
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    display: block;
+        margin-top: 25px;
+}
+.img2{
+    display: none;
+}
+.img4{
+    display: none;
+}
+.img6{
+    display: none;
+}
+
+.img1:hover {
+  display: none;
+}
+.img1:hover .img2{
+  display: block !important;
+}

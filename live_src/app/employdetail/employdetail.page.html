@@ -1,0 +1,290 @@
+<ion-content>
+
+  <ion-header>
+    <ion-toolbar class="bgmain">
+      <img style="width:100%" src="assets/images/Group 1001.png">
+    </ion-toolbar>
+  </ion-header>
+<ion-row class="mglr">
+    <ion-col size-md="12">
+      <div class="mgtop33px">
+        <div class="mgleft16px employees" id="arrow">
+          <!-- <span class="mgleft16px" id="emp"><span class="mgleft40px">Employees List</span></span> -->
+          <img style="cursor: pointer;" (click)="myBackButton()" src="assets/images/Group 753.png">
+        </div>
+      </div>
+    </ion-col>
+  <ion-col size-md="4" size="12">
+      <div class="mgtop63px" id="avtar">
+        <img style="position: absolute;" src="assets/images/Group 755.png">
+        <p class="mgleft100px name ion-padding-top">{{empdetail.name}}</p>
+        <p class="mgleft100px email">{{empdetail.email}}</p>
+      </div>
+  </ion-col>
+  <ion-col size-md="6" offset-md="0" size="6">
+    <img style="cursor: pointer;" (click)="updateprofile()" src="assets/images/edit employee.png">
+  </ion-col>
+  <ion-col size-md="4" size="12" class="mgtop63px">
+    <ion-segment  [(ngModel)]="type" (ionChange)="segmentChanged($event)">
+      <ion-segment-button class="check"  value="Employee Details">
+        <ion-label class="segment">Employee Details</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class="check" value="Pay">
+        <ion-label class="segment">Pay Cheque List</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-col>
+  <ion-col size-md="6" size="12"></ion-col>
+</ion-row>
+<div [ngSwitch]="type">
+  <div *ngSwitchCase="'Employee Details'">
+    <ion-row class="mgrf">
+      <ion-col size-md="4" size="12">
+        <ion-card>
+          <ion-row>
+            <ion-col size-md="7" size="6">
+              <ion-item lines="none">
+                <ion-label class="pay">Pay</ion-label>
+              </ion-item>
+            </ion-col>
+
+            <ion-col size-md="5" size="6">
+              <ion-item lines="none">
+                <!-- <ion-button fill="outline" slot="end">
+                  <img src="../../../assets/images/pen.png" slot="start" class="pen" >
+                  Edit</ion-button> -->
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="6">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Taxes : </span><span class="federal">Federal:</span> <span class="federal color">$ 14</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="federal:">Provincial: </span><span class="federal color">$ 14</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Social Insurance no : </span><span class="federal color">**** - 542</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Pay Rate : </span><span class="federal color">$ {{empdetail.payRate}} / hour</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Premium Pay Rate : </span><span class="federal color">$ {{empdetail.shiftPremiumPayRate}} / hour</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Additional Pay : </span><span class="federal color">Vacation pay,  Stat Holiday pay</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Pay Schedule : </span><span class="federal color">Semi -  Monthly</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Payment Method : </span><span class="federal color">{{empdetail.paymentMethod}}</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Deduction : </span><span class="federal color">{{empdetail.deduction}}</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Company - Paid </span></ion-label>
+                </ion-item>
+              </ion-col>
+
+
+              <ion-col size-md="12">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label><span class="taxes">Contributions :</span> <span class="federal color">None</span></ion-label>
+                </ion-item>
+              </ion-col>
+
+
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size-md="4" size="12">
+        <ion-card>
+          <ion-row>
+            <ion-col size-md="7" size="6">
+              <ion-item lines="none">
+                <ion-label class="pay">Profile</ion-label>
+              </ion-item>
+            </ion-col>
+
+            <ion-col size-md="5" size="6">
+              <ion-item lines="none">
+                <!-- <ion-button fill="outline" slot="end">
+                  <img src="../../../assets/images/pen.png" slot="start" class="pen" >
+                  Edit</ion-button> -->
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-card-content>
+            <ion-col size-md="12">
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label><span class="taxes">Address :</span> <span class="federal color">{{empdetail.address}}</span></ion-label>
+              </ion-item>
+
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label><span class="taxes">Birth Date :</span> <span class="federal color">{{empdetail.dob}}</span></ion-label>
+              </ion-item>
+
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label><span class="taxes">Gender :</span> <span class="federal color">{{empdetail.gender}}</span></ion-label>
+              </ion-item>
+
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label><span class="taxes">Notes </span> <span class="federal color">{{empdetail.notes}}</span></ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size-md="4" size="12">
+        <ion-card>
+          <ion-row>
+            <ion-col size-md="7" size="6">
+              <ion-item lines="none">
+                <ion-label class="pay">Employment</ion-label>
+              </ion-item>
+            </ion-col>
+
+            <ion-col size-md="5" size="6">
+              <ion-item lines="none">
+                <!-- <ion-button fill="outline" slot="end">
+                  <img src="../../../assets/images/pen.png" slot="start" class="pen" >
+                  Edit</ion-button> -->
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+
+
+
+          <ion-card-content>
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label><span class="taxes">Employee ID : </span> <span class="federal color">{{datasend.id}}</span></ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label><span class="taxes">Status : </span> <span class="federal color">{{empdetail.status}}</span></ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label><span class="taxes">Hire Date : </span> <span class="federal color">{{empdetail.hireDate}}</span></ion-label>
+            </ion-item>
+
+
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label><span class="taxes">Job Title : </span> <span class="federal color">{{empdetail.jobTitle}}</span></ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label><span class="taxes">Work Location : </span> <span class="federal color">{{empdetail.workingLocation}}
+</span></ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </div>
+
+
+
+  <div *ngSwitchCase="'Pay'">
+    <ion-row class="mglr">
+      <ion-col size="12">
+        <p class="select mgtop42px">Select the Pay Cheques you’d like to Print </p>
+      </ion-col>
+      <ion-col size-md="4" size="12" class="mgtop42px">
+        <ion-label class="colorwhite  labelheading">Date Range</ion-label>
+        <ion-item style="margin-top: 10px;
+    margin-bottom: 30px;" lines="none" class="mgtop10px boder6pxSecond">
+          <ion-select class="width100per bgfil fil" value="Net 30">
+            <ion-select-option value="Net 30">Net 30</ion-select-option>
+            <!-- <ion-select-option value="n64">Nintendo64</ion-select-option>
+            <ion-select-option value="ps">PlayStation</ion-select-option>
+            <ion-select-option value="genesis">Sega Genesis</ion-select-option>
+            <ion-select-option value="saturn">Sega Saturn</ion-select-option>
+            <ion-select-option value="snes">SNES</ion-select-option> -->
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+    <button *ngIf="printshow == 'true'" (click)="printing()" style="padding: 12px;
+    width: 150px;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: -50px;
+    right: 10px;
+    background-color: #23a271;color: #fff;">Print</button>
+    <div style="overflow-x:auto;" class="mgtop42px paddingbottom200px">
+      <table>
+        <tr>
+          <th class="width5per">Select</th>
+          <th class="width5per">ID</th>
+          <th class="width10px">Pay Date</th>
+          <th class="width10px">Name</th>
+          <th class="width10px">Total Pay</th>
+          <th class="width10px">Net Pay</th>
+          <th class="width10px">Pay Method</th>
+          <th class="width10px">Cheque Number</th>
+          <th class="width10px">Status</th>
+        </tr>
+        <tr *ngFor="let list of empdetaillist">
+          <td>
+           <ion-checkbox (click)="onChange(list.id)" class="check"></ion-checkbox>
+          </td>
+          <td>{{list.id}}</td>
+          <td class="borderright fontsize18px">{{list.payDate}}</td>
+          <td class="borderright fontsize18px">{{list.name}}</td>
+          <td class="borderright fontsize18px">${{list.totalPay}}</td>
+          <td class="borderright fontsize18px">${{list.netPay}}</td>
+          <td class="borderright fontsize18px" style="color:#24A270"><a href="https://:7900/api/printStub/{{list.id}}" target="_blank" rel="noopener noreferrer">{{list.paymentMethod}}</a></td>
+          
+          <td class="borderright"><ion-input class="places"></ion-input></td>
+          <td class="borderright fontsize18px">--</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,218 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="assets/images/Group.png">
+    </ion-buttons>
+    <!-- <ion-searchbar></ion-searchbar> -->
+    <!-- <ion-buttons slot="end">
+      <img class="noti" src="assets/images/Group 661.png">
+      <img class="admin" src="assets/images/Group 663.png">
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- <ion-header>
+    <ion-toolbar class="bgmain">
+      <ion-row class="mgtop30px paddingbottom27px">
+        <ion-col size="12" offset-md="1" size-md="2">
+          <div class="logo"></div>
+        </ion-col>
+        <ion-col size="8" offset-md="1" size-md="4" lines="none">
+          <ion-item class="search mgtop10px" >
+            <ion-input></ion-input>
+            <div class="searchicon"></div>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="4" offset-md="1" size-md="2" lines="none">
+          <div class="displayflex ion-float-end mgtop20px">
+            <div class="bellicons"><span class="bage">2</span></div>
+            <div class="bulding mgleft30px"><span class="bage2"></span></div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-header> -->
+  <ion-row class="mgtop50px">
+    <ion-col size="6" offset-md="1" size-md="5">
+      <ion-item style="margin-left: -100px;
+    margin-bottom: 40px;
+    margin-top: 15px;" lines="none" class="paddingstart mgtop10px">
+        <ion-label class="runpayroll ion-text-left">
+          Run Payroll: <span>Every Friday</span>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6" size-md="5">
+     <!--  <ion-item (click)="myBackButton()" style="cursor: pointer;" lines="none" class="paddingstart mgtop10px">
+        <ion-avatar slot="end" class="bodor">
+          <img src="assets/images/Close-2.png" />
+        </ion-avatar>
+        <ion-label class="runpayroll ion-text-end">
+          Close
+        </ion-label>
+      </ion-item> -->
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="mgtop42px">
+    <ion-col size="5" size-md="1.5" offset-md="1" class="mgtop20px">
+      <ion-label class="labelheading">Pay From</ion-label>
+      <ion-item class="mgtop10px bodor6px" lines="none">
+        <ion-select style="border: none;"  class="width100per place" value="nes">
+          <ion-select-option value="nes">Scotiabank</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="5" size-md="1.5" class="mgtop50px mgleft16px">
+      <ion-item lines="none">
+        <ion-label class="labelheading fontsize20px">Balance <br><span class="fontlight">${{totalamount}}</span></ion-label>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="5" size-md="1.5" class="mgtop20px">
+      <ion-label class="labelheading">Pay year</ion-label>
+      <ion-item class="mgtop10px bodor6px" lines="none">
+        <ion-select style="border: none;" (onclick)="onchangeclick()" (ionChange)="OnChange1('false')" [(ngModel)]="week" class="width100per place" value="none">
+          <!-- <ion-select-option value="20222">2022</ion-select-option> -->
+          <ion-select-option  *ngFor="let yearselect of yearloop" value = "{{yearselect}}">{{yearselect}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="5" size-md="1" offset-md="1" class="mgtop20px">
+      <ion-label class="labelheading">Start Date</ion-label>
+      <ion-item lines="none" button="true" id="open-start-date-input" class="mgtop10px bodor6px">
+        <ion-text slot="start" class="colorwhite inputfont">{{startdate}}</ion-text>
+        <ion-popover trigger="open-start-date-input" show-backdrop="true">
+          <ng-template>
+            <ion-datetime
+             [(ngModel)]="startdate"
+              #popoverStartDate
+              presentation="date"
+              (ionChange)="handleStartDate(popoverStartDate.value)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+    </ion-col>
+    
+    <ion-col size="5" size-md="1" offset-md="1" class="mgtop20px">
+      <ion-label class="labelheading">End Date</ion-label>
+      <ion-item lines="none" button="true" id="open-end-date-input" class="mgtop10px bodor6px">
+        <ion-text slot="start" class="colorwhite inputfont">{{enddate}}</ion-text>
+        <ion-popover trigger="open-end-date-input" show-backdrop="true">
+          <ng-template>
+            <ion-datetime [(ngModel)]="enddate"
+              #popoverEndDate
+              presentation="date"
+              (ionChange)="handleEndDate(popoverEndDate.value)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+    </ion-col>
+    <ion-col size="5" size-md="1" offset-md="1"  class="mgtop20px">
+      <ion-label class="labelheading">Pay Date</ion-label>
+      <ion-item lines="none" button="true" id="open-date-input6" class="mgtop10px bodor6px">
+        <ion-text slot="start" class="colorwhite inputfont">{{date}}</ion-text>
+        <ion-popover trigger="open-date-input6" show-backdrop="true">
+          <ng-template>
+            <ion-datetime [(ngModel)]="mydate"
+              #popoverDatetime5
+              presentation="date"
+              (ionChange)="payratedate(popoverDatetime5.value)"
+            ></ion-datetime>
+                    
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+    </ion-col>
+    <ion-col size="5" size-md="2" class="mgleft16px">
+      <ion-item lines="none">
+        <ion-label class="labelheading mgtop20px ion-margin ion-text-end">
+          <div class="fontsize22px">Total</div>
+          <div *ngIf="totalfinalvalue > 1 && totalfinalvalue < 100000000" class="mgtop20px totalfont">${{totalfinalvalue |  number : '1.2-2'}}</div>
+          <div *ngIf="totalfinalvalue < 1 || totalfinalvalue > 100000000" class="mgtop20px totalfont">$0</div>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <div style="overflow-x:auto;" class="mgtop82px paddingbottom200px">
+    <table>
+      <tr>
+        <th class="width5per"><!-- <ion-checkbox class="check"></ion-checkbox> --></th>
+        <th class="width10px">Employee</th>
+        <th class="width10px">Pay Method</th>
+        <th class="width10px">Regularly pay HRS</th>
+        <th class="width10px">Ot HRS</th>
+        <th class="width10px">Shift Premium Hours</th>
+        <th class="width10px">Vacation Pay HRS</th>
+        <th class="width10px">Stat Holiday Pay HRS</th>
+        <th class="width10px">PayRate</th>
+        <th class="width10px">Memo</th>
+        <th>Total HRS</th>
+        <th>Total Amount</th>
+      </tr>
+      <ion-spinner *ngIf="items?.length < 1" style="    color: #000;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 35px;" name="lines"></ion-spinner>
+      <tr *ngFor="let emp of items; let i=index">
+        <!-- <td *ngIf="rhours[i]">
+           <ion-checkbox  [(ngModel)]="isChecked[i]"  (click)="onChange(emp.id,rhours[i],othours[i],hhours[i],memo[i],((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0),i,phours[i],emp.payRate)" class="check"></ion-checkbox>
+        </td>
+        <td (click)="call_alert()" *ngIf="!rhours[i]">
+          <ion-checkbox disabled="true" class="check"></ion-checkbox>
+        </td> -->
+        <td>
+           <ion-checkbox  [(ngModel)]="isChecked[i]"  (click)="valuecheck(emp.id,rhours[i],othours[i],hhours[i],memo[i],((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0),i,phours[i])" class="check"></ion-checkbox>
+        </td>
+        <td class="borderright fontsize18px">{{emp.name}}</td>
+        <td class="borderright fontsize18px">Bank</td>
+        <td class="borderright"><ion-input [(ngModel)]="rhours[i]" min="0" max="500" (ngModelChange)="onChange(emp.id,rhours[i],othours[i],hhours[i],memo[i],((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0),i,phours[i],emp.payRate,emp.shiftPremiumPayRate)" *ngIf="checkedemp.indexOf(emp.id) > -1" placeholder="0" type="number" class="places"></ion-input></td>
+        <td class="borderright"><ion-input min="0" max="500" [(ngModel)]="othours[i]" (ngModelChange)="onChange(emp.id,rhours[i],othours[i],hhours[i],memo[i],((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0),i,phours[i],emp.payRate,emp.shiftPremiumPayRate)" *ngIf="checkedemp.indexOf(emp.id) > -1" placeholder="0" type="number" class="places"></ion-input></td>
+        <td class="borderright"><ion-input min="0" max="500" [(ngModel)]="phours[i]" (ngModelChange)="onChange(emp.id,rhours[i],othours[i],hhours[i],memo[i],((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0),i,phours[i],emp.payRate,emp.shiftPremiumPayRate)" *ngIf="emp.shiftPremiumStatus == 'enable' && checkedemp.indexOf(emp.id) > -1" placeholder="0" type="number" class="places"></ion-input>
+        <p style="margin: 0;" *ngIf="emp.shiftPremiumStatus != 'enable'">--</p>  
+        </td>
+        <td class="borderright fontsize18px">4:00 %</td>
+        <td class="borderright"><ion-input min="0" max="500" [(ngModel)]="hhours[i]" (ngModelChange)="onChange(emp.id,rhours[i],othours[i],hhours[i],memo[i],((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0),i,phours[i],emp.payRate,emp.shiftPremiumPayRate)" *ngIf="checkedemp.indexOf(emp.id) > -1" placeholder="0" type="number" class="places"></ion-input></td>
+        <td class="borderright fontsize18px">{{emp.payRate}}</td>
+        <td class="borderright"><ion-input [(ngModel)]="memo[i]" (ngModelChange)="onChange(emp.id,rhours[i],othours[i],hhours[i],memo[i],((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0),i,phours[i],emp.payRate,emp.shiftPremiumPayRate)" *ngIf="checkedemp.indexOf(emp.id) > -1" style="    padding-left: 10px;
+          padding-right: 10px;"  placeholder="notes" type="text" class="places"></ion-input></td>
+
+        <td *ngIf="((rhours[i] || 0)+(othours[i] || 0)+(hhours[i] || 0)+(phours[i] || 0)) > 0 && ((rhours[i] || 0)+(othours[i] || 0)+(hhours[i] || 0)+(phours[i] || 0)) < 10000000" class="borderright fontsize18px">{{((rhours[i] || 0)+(othours[i] || 0)+(hhours[i] || 0)+(phours[i] || 0)) || 0}}</td>
+        <td *ngIf="((rhours[i] || 0)+(othours[i] || 0)+(hhours[i] || 0)+(phours[i] || 0)) <= 0 || ((rhours[i] || 0)+(othours[i] || 0)+(hhours[i] || 0)+(phours[i] || 0)) > 10000000" class="borderright fontsize18px">0</td>
+
+        <td *ngIf="((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0) > 0 && ((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0) < 100000000" class="borderright fontsize18px bold">${{(((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0))|| 0) |  number : '1.2-2'}}</td>
+
+        <td *ngIf="((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0) <=0 || ((emp.payRate*rhours[i])+(othours[i]*(emp.payRate*1.5) || 0)+(emp.payRate*hhours[i] || 0)+(emp.shiftPremiumPayRate*phours[i] || 0) || 0) > 100000000" class="borderright fontsize18px bold">$0</td>
+      </tr>  
+
+         <!-- totalfinalvalue > 1 && totalfinalvalue < 100000000 -->
+
+
+    </table>
+  </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="bgmain paddingt30px baddingbot30px">
+    <ion-row>
+      <ion-col offset="1" size="5">
+        <ion-button  (click)="myBackButton()"  class="btoutline">Back</ion-button>
+      </ion-col>
+
+      <ion-col size="5">
+        <ion-button class="btdone" *ngIf="toastvall == 'false'" (click)="callallvalue()">Preview Payroll</ion-button>
+        <ion-button class="btdone" *ngIf="toastvall == 'true'">Please wait...</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

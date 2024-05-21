@@ -1,0 +1,66 @@
+.bg{
+    --background: #241F35;
+  }
+  ion-header {
+    height: 100px; 	
+    ion-toolbar {
+        height: 100px;
+      --background: #241F35;
+      --color: #fff;
+    }
+  }
+  .logo{
+          /*padding: 35px;*/
+      /*width: 40px;*/
+      width: 48px;
+  height: 41px;
+  }
+  .noti{
+      margin-left: 110px;
+      margin-right: 25px;
+  }
+  .admin{
+      margin-right: 50px;
+  }
+  .employetit{
+    font-weight: 500;
+    font-size: 30px;
+  }
+  .headerbtn{
+    width: 100px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fff;
+      font-weight: bold;
+      display: inline-block;
+      color: #000;
+  }
+  .inputtype{
+    border: solid 1px #fff;
+      border-radius: 5px;
+  }
+  .checkbox-icon{
+    background: #fff !important;
+  }
+  .btn-color{
+    background-color: #3dcb93 !important;
+    color: #fff !important;
+  }
+  .enbdeb{
+    background-color:#3ccb93 !important;
+    color: #fff !important;
+  }
+  
+  
+  
+  /*ion-content {
+  --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  }
+  */
+  
+  

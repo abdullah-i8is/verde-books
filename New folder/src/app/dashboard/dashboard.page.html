@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="assets/images/Group.png">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bg">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <div style="    margin-left: 90px;
+         margin-top: 155px;"></div><br>
+        <div style="    margin-left: 20px;
+         margin-top: 35px;">
+          <!-- <div style="margin-top: 60px;" class="sidebtn"><img style="margin-right: 20px;
+            margin-left: 4px;" src="assets/images/Group 677.png"><span>Dashboard</span><ion-icon style="margin-left: 103px;" class="sideicon21" name="chevron-forward-outline"></ion-icon></div>
+          <div class="sidebtn" routerLink="/employees" style="cursor: pointer;"><img style="    margin-right: 18px;" src="assets/images/Group 680.png"><span>Employees</span><ion-icon class="sideicon21" name="chevron-forward-outline"></ion-icon></div>
+          <img class="dbbtn" src="assets/images/Group 712 (1).png">
+          <div class="sidebtn" routerLink="/paychecklist" style="cursor: pointer;"><img style="    margin-right: 20px;    margin-left: 2px;" src="assets/images/Group 678.png"><span>Paycheque list</span><ion-icon class="sideicon23" name="chevron-forward-outline"></ion-icon></div>
+          <div routerLink="/account" style="cursor: pointer;" class="sidebtn"><img style="    margin-right: 15px" src="assets/images/Group 679 (1).png"><span>My Accountants</span><ion-icon class="sideicon24" style="margin-left: 57px;" name="chevron-forward-outline"></ion-icon></div> -->
+          <img routerLink="/dashboard"  style="cursor: pointer;    width: 280px;" src="assets/menu/menu/Group 987.png"> <br>
+          <img routerLink="/employees"  style="cursor: pointer;    width: 280px;" src="assets/menu/Group 719.png"> <br>
+          <img routerLink="/payrol"  style=" cursor: pointer;   width: 280px;" src="assets/menu/Group 712.png"> <br>
+          <img routerLink="/report"  style=" cursor: pointer;   width: 280px;" src="assets/menu/Group 721.png"> <br>
+          <img routerLink="/accountants"  style=" cursor: pointer;   width: 280px;" src="assets/menu/Group 722.png"> <br>
+          <img routerLink="/account"  style="  cursor: pointer;  width: 280px;" src="assets/menu/Group 832.png"> <br>
+          <img routerLink="/signin"  style="  cursor: pointer;  margin-left: 90px;margin-top: 175px;" routerLink="/signin" src="assets/images/Group 6781.png">
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <img style="margin-top: 130px;" src="assets/images/Group 865.png">
+    </ion-col>
+      <!-- <ion-col size="4" style="margin-top: 100px;">
+        <div>
+           <ion-grid>
+            <h1 style="color:aliceblue">Merge Statement:</h1>
+
+              <ion-col size="5" style="margin-bottom: 20px;">
+                <div class="lastbox addemp" style="cursor: pointer; background: none;">
+                  <input type="file" #fileInput (change)="onFileSelected($event)" accept=".pdf" style="padding: 10px 13px;font-size: 18px;color: white;background: #167952;">
+                  <input type="text" [(ngModel)]="pdfName" placeholder="PDF Name" style="padding: 10px 13px;font-size: 18px;color: black;">
+                  <button (click)="uploadPDF()" style="padding: 14px; font-size: 18px; margin-left: 10px; background: #167952; color: #fff;">Upload PDF</button>
+                </div>
+              </ion-col>
+
+            <ion-row style="border: solid 2px #167952;color: #fff;padding: 12px;background-color: #167952;">
+              <ion-col size="4">
+                BANK SLIP 
+              </ion-col>
+              <ion-col size="3">
+                STATUS
+              </ion-col>
+              <ion-col size="3" style="margin: 0 auto;">
+                ACTION
+              </ion-col>
+            </ion-row>
+          <ion-spinner *ngIf="emp.length < 1" style="    color: #fff;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;" name="lines"></ion-spinner> 
+            <ion-row *ngFor="let emp of pdfs" style="border: solid 1px #177952; margin-top: 10px; color: #fff; padding: 15px; cursor: pointer;">
+              <ion-col size="4">
+                {{emp.name}}
+              </ion-col>
+              <ion-col size="3">
+                {{emp.status}}
+              </ion-col>
+              <ion-col size="3">
+                <p style="margin: 0px;text-decoration: underline;" (click)="viewTransactions(emp.pdfId)">View</p>
+              </ion-col>
+              <ion-col size="2" *ngIf="emp.status === 'Merged'">
+                <p style="margin: 0px; color: #ccc; cursor: not-allowed;">Delete</p>
+              </ion-col>
+              <ion-col size="2" *ngIf="emp.status === 'uploaded'">
+                <p style="margin: 0px;text-decoration: underline;" (click)="deletepdf(emp.pdfId)">Delete</p>
+              </ion-col>
+            </ion-row>
+            
+           </ion-grid>  
+        </div>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+</ion-content>

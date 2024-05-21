@@ -1,0 +1,58 @@
+<ion-content class="bg">
+  <!-- <img style="width: 100%;" src="assets/icon/Group 978.png"> -->
+  <div *ngIf="!login_loader">
+  <img style="position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 12%;" src="assets/images/Group 999.png">
+    <div style="    margin-top: 0px;
+    margin-bottom: 70px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 501px;
+    text-align: center;">
+    <!-- <input type="radio" name="Button" class="ButtonState" checked id="Button1" value="1"/>
+    <label class="Button" for="Button1">Email or User Id</label> -->
+   <!--  <input type="radio" name="Button" class="ButtonState" id="Button2" value="2"/>
+    <label class="Button" for="Button2">Phone Number</label> -->
+
+    <input (keyup.enter)="signin()" [(ngModel)]="email" style="    margin-top: 60px;
+    width: 375px;
+    border: none;
+    background-color: #cbefdf;
+    height: 45px;
+    border-radius: 5px;color: #167952;
+    padding: 10px;
+    font-size: 20px;" placeholder="JacksonNoah@example.com" type="text" name="Email"><br>
+    <input (keyup.enter)="signin()" [(ngModel)]="pass" style="    margin-top: 10px;
+    width: 375px;
+    border: none;
+    background-color: #cbefdf;
+    height: 45px;
+    border-radius: 5px;color: #167952;
+    padding: 10px;
+    font-size: 20px;" placeholder="**********" type="Password" name="pass">
+  </div>
+    <ion-spinner *ngIf="loginpress" style="    color: #000;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 35px;" name="lines"></ion-spinner>
+    <img *ngIf="!loginpress" (click)="signin()" style="position:relative;margin-left: auto;margin-right: auto;left: 0;right: 0;display: block;width: 360px;cursor: pointer;" src="assets/images/Grouplogin.png">
+    <!-- <button (keyup.enter)="signin()">asdasdsad</button> -->
+   <!--  <p style="text-align: center;">or Forgot Password</p> -->
+   <p style="text-align: center;margin-top: 50px;">Don’t have an account?  <a routerLink="/organization" >Sign up</a></p>
+  </div>
+  <div *ngIf="login_loader" style="background-color:#000">
+    <img src="assets/images/Verdebooks1.gif">
+  </div>
+</ion-content>

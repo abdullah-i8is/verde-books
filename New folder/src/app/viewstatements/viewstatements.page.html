@@ -1,0 +1,112 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <img class="logo" src="assets/images/Group.png">
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="bg">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" style="margin-bottom: 20px;">
+          <div class="lastbox addemp" style="cursor: pointer;">
+            <button (click)="addPdf()" style="padding: 14px; font-size: 18px;background: #167952; color: #fff; margin-right: 10px; cursor: pointer;">Add more</button>
+            <button (click)="eachBankPdfTransactionId(urlid)" style="padding: 14px; font-size: 18px;background: #167952; color: #fff; cursor: pointer;">Run Pay Roll</button>
+          </div>
+
+        </ion-col>
+        <ion-col size="8" style="margin-top: 40px;margin: 0 auto;">
+          <div>
+             <ion-grid>
+              <ion-row style="border: solid 2px #167952;color: #fff;padding: 12px;background-color: #167952;">
+                <ion-col size="2">
+                  PDF 
+                </ion-col>
+                <ion-col size="2">
+                 DATE
+                </ion-col>
+                <ion-col size="3">
+                  DESCRIPTION
+                </ion-col>
+                <ion-col size="2">
+                  WITHDRAWAL
+                </ion-col>
+                <ion-col size="2">
+                  DEPOSITS
+                </ion-col>
+              </ion-row>
+              <ion-spinner *ngIf="pdfs.length < 1" style="    color: #fff;
+              position: absolute;
+              left: 0;
+              right: 0;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 20px;" name="lines"></ion-spinner>
+
+              <ion-row>
+                <ion-col size="2" *ngIf="isadd">
+                  <ion-input [(ngModel)]="pdf_name" placeholder="PDF Name" style="color: #fff;"></ion-input>
+                </ion-col>
+                <ion-col size="2" *ngIf="isadd">
+                  <ion-input [(ngModel)]="date" placeholder="Date" style="color: #fff;"></ion-input>
+                </ion-col>
+                <ion-col size="3" *ngIf="isadd">
+                  <ion-input [(ngModel)]="description" placeholder="Description" style="color: #fff;"></ion-input>
+                </ion-col>
+                <ion-col size="2" *ngIf="isadd">
+                  <ion-input [(ngModel)]="withdrawal" placeholder="Withdrawal" style="color: #fff;"></ion-input>
+                </ion-col>
+                <ion-col size="2" *ngIf="isadd">
+                  <ion-input [(ngModel)]="deposite" placeholder="Deposits" style="color: #fff;"></ion-input>
+                </ion-col>
+                <ion-col size="1">
+                  <p style="margin: 0px; margin-top: 7px; cursor:pointer; color: #fff;" *ngIf="isadd" (click)="addtopdftransactions()">ADD</p>
+                </ion-col>
+                
+                
+              </ion-row>
+              <ion-row *ngFor="let emp of pdfs" style="border: solid 1px #177952; margin-top: 10px; color: #fff; padding: 15px; cursor: pointer;">
+                <ion-col size="2" *ngIf="!emp.isEditing">
+                  {{emp.pdf_name}}
+                </ion-col>
+                <ion-col size="2" *ngIf="!emp.isEditing">
+                  {{emp.date}}
+                </ion-col>
+                <ion-col size="3" *ngIf="!emp.isEditing">
+                  {{emp.description}}
+                </ion-col>
+                <ion-col size="2" *ngIf="!emp.isEditing">
+                  {{emp.withdrawal}}
+                </ion-col>
+                <ion-col size="2" *ngIf="!emp.isEditing">
+                  {{emp.deposite}}
+                </ion-col>
+                <ion-col size="2" *ngIf="emp.isEditing">
+                  <ion-input [(ngModel)]="emp.pdf_name" placeholder="PDF Name"></ion-input>
+                </ion-col>
+                <ion-col size="2" *ngIf="emp.isEditing">
+                  <ion-input [(ngModel)]="emp.date" placeholder="Date"></ion-input>
+                </ion-col>
+                <ion-col size="2" *ngIf="emp.isEditing">
+                  <ion-input [(ngModel)]="emp.description" placeholder="Description"></ion-input>
+                </ion-col>
+                <ion-col size="2" *ngIf="emp.isEditing">
+                  <ion-input [(ngModel)]="emp.withdrawal" placeholder="Withdrawal"></ion-input>
+                </ion-col>
+                <ion-col size="2" *ngIf="emp.isEditing">
+                  <ion-input [(ngModel)]="emp.deposite" placeholder="Deposits"></ion-input>
+                </ion-col>
+                <ion-col size="1">
+                  <p  *ngIf="!emp.isEditing" style="margin: 0px; cursor:pointer;" (click)="editPdf(emp)">Edit</p>
+                  <p  *ngIf="!emp.isEditing" style="margin: 0px;cursor:pointer;" (click)="delete(emp.id)">Del</p>
+                </ion-col>
+                <ion-col size="1">
+                  <p style="margin: 0px;cursor:pointer;" *ngIf="emp.isEditing" (click)="edittransaction(emp.id,emp.pdf_name,emp.date,emp.description,emp.withdrawal,emp.deposite)">Done</p>
+                </ion-col>
+              </ion-row>
+             </ion-grid>  
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

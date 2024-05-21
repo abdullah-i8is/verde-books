@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-toolbar style="    padding-top: 22px;
+    padding-left: 20px;">
+    <ion-buttons slot="start">
+      <img class="logo" src="assets/images/Group 912.png">
+      <span class="employetit">Add Organization</span>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <img class="noti" src="assets/images/Help 1 (1).png">
+      <img class="admin" (click)="myBackButton()" src="assets/images/Close 1 (1).png">
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <div style="    background: #241F35;
+    margin-top: -30px;">
+    <div style="color:#fff;width: 66%;
+    margin-left: 18%;
+    margin-top: 30px;">
+      <div style="text-align: center;    margin-bottom: 20px;">
+        <button class="headerbtn" style="margin-left: 15px;" 
+          >Organization</button>
+        <!-- <button class="headerbtn" style="margin-left: 15px;" [class.btn-color]="emp == 'profile'" (click)="changetab('profile')">Profile</button>
+        <button class="headerbtn" style="margin-left: 15px;" [class.btn-color]="emp == 'bank'" (click)="changetab('bank')">Employment</button> -->
+        <!--  <p style="display:inline-block;margin-left: 20px;">Profile</p>
+        <p style="display:inline-block;margin-left: 20px;">Employment</p> -->
+      </div>
+
+    </div>
+    <div style="color:#fff">
+      <div style="    border: solid 1px #fff;
+ padding: 30px; width: 66%;margin-left: 18%;">
+        <div>
+          <img style="    display: inline-flex;
+ margin-bottom: -10px;" src="assets/images/Group 913.png"><span style="margin-left:10px">Organization Info</span>
+        </div>
+        <ion-grid style="    margin-top: 10px;
+ margin-bottom: 35px;">
+          <ion-row>
+            <ion-col size="5">
+              <p>Organization Name</p>
+            </ion-col>
+            <ion-col size="2">
+              <!-- <p>M.I.</p> -->
+            </ion-col>
+            <ion-col size="5">
+              <p>Street Address</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-input [(ngModel)]="orgname" placeholder="Enter Organization Name" class="inputtype"
+                required></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <!-- <ion-input class="inputtype" ></ion-input> -->
+            </ion-col>
+            <ion-col size="5">
+              <ion-input [(ngModel)]="street" placeholder="Enter Street address" class="inputtype" required></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="5">
+              <p>Postal Code</p>
+            </ion-col>
+            <ion-col size="2">
+              <!-- <p>M.I.</p> -->
+            </ion-col>
+            <ion-col size="5">
+              <p>City Address</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-input [(ngModel)]="postalCode" type="text" placeholder="Enter Postal Code" class="inputtype"
+                required></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <!-- <ion-input class="inputtype" ></ion-input> -->
+            </ion-col>
+            <ion-col size="5">
+              <ion-input [(ngModel)]="city" placeholder="Enter City address" class="inputtype" required></ion-input>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+        <div>
+          <img style="    display: inline-flex;
+ margin-bottom: -10px;" src="assets/images/Group 913.png"><span style="margin-left:10px">Login Credentials</span>
+        </div>
+        <ion-grid style="    margin-top: 10px;
+ margin-bottom: 35px;">
+          <ion-row>
+            <ion-col size="5">
+              <p>Email</p>
+            </ion-col>
+            <ion-col size="2">
+              <!-- <p>M.I.</p> -->
+            </ion-col>
+            <ion-col size="5">
+              <p>Password</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-input [(ngModel)]="email" placeholder="Enter Organization Name" class="inputtype"
+                required></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <!-- <ion-input class="inputtype" ></ion-input> -->
+            </ion-col>
+            <ion-col size="5">
+              <ion-input [(ngModel)]="password" placeholder="Enter Street address" class="inputtype" required></ion-input>
+            </ion-col>
+          </ion-row>
+
+
+        </ion-grid>
+      </div>
+    </div>
+  
+  <img (click)="canclechangedone()" style="margin-left:30px;margin-top: 30px;margin-bottom: 30px;"
+    src="assets/images/Group 746.png">
+    <button type="button" style="float: right; margin-right: 30px; margin-top: 30px; margin-bottom: 30px; padding: 15px 20px;
+    border-radius: 5px; font-weight: 500;" (click)="saveOrganization()" [disabled]="!validateForm()">Submit</button>
+
+  <!-- <img style="float: right;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;" (click)="saveOrganization()" src="assets/images/Group 747.png"> -->
+  </div>
+</ion-content>

@@ -1,0 +1,97 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('assets/font/Roboto-Light.woff2') format('woff2'),
+  url('assets/font/Roboto-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'robotobold';
+  src: url('assets/font/Roboto-Bold.woff2') format('woff2'),
+  url('assets/font/Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('assets/font/Roboto-Regular.woff2') format('woff2'),
+  url('assets/font/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url('assets/font/Roboto-Medium.woff2') format('woff2'),
+  url('assets/font/Roboto-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Black';
+  src: url('assets/font/Roboto-Black.woff2') format('woff2'),
+  url('assets/font/Roboto-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+.mgleft20px{
+  margin-left: 20px !important;
+}
+.mgleft16px{
+  margin-left: 16px;
+}
+.padding10px{
+  padding: 8px;
+}
+.padding0px{
+  padding: 0px !important;
+}
+.searchbar-input.sc-ion-searchbar-md{
+  border-radius: 15px !important;
+}
+.searchbar-search-icon.sc-ion-searchbar-md{
+  color: #fff;
+}
+
+
+.center-toast {
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+  height: 100%!important;
+}
