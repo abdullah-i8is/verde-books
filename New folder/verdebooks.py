@@ -1809,7 +1809,7 @@ def addBalance():
 @app.route("/api/urlToPdf/<data>",methods=["GET","POST"])
 def urlToPdf(data):
     api = pdfcrowd.HtmlToPdfClient("sohaib", "b68af86f1879568b27d711cd29c5346f")
-    api.convertUrlToFile("https://verdebooks.com:7900/api/printStub/"+data, "/var/www/verdebooks/webapp/example1.pdf")
+    api.convertUrlToFile("https://verdebooks-backend.vercel.app/api/printStub/"+data, "/var/www/verdebooks/webapp/example1.pdf")
     return jsonify({"url":"https://verdebooks.com/example1.pdf"})
 
 #PAY CHEQUE LIST

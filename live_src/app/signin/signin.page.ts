@@ -24,7 +24,7 @@ export class SigninPage implements OnInit {
     console.log("working");
   }
   printing() {
-    window.open("https://verdebooks.com:7900/api/", '_blank');
+    window.open("https://verdebooks-backend.vercel.app/api/", '_blank');
   }
   signin(){
     // this.printing()

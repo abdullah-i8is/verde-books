@@ -8,12 +8,12 @@ import { Storage } from '@ionic/storage-angular';
 export class UserService {
   url:any;
   company_id:any;
-  // https://:7900/api/allEmployeeshttps://verdebooks.com:7900/api/runPayRoll
+  // https://:7900/api/allEmployeeshttps://verdebooks-backend.vercel.app/api/runPayRoll
   // https://clickhr.ca:7000/api/checkhousesweep
   // https://clickhr.ca:7000/api/checkhousesweep
   constructor(private http: HttpClient,public loadingController: LoadingController,private storage: Storage) {
     const postData = new FormData();
-    const apiUrl = 'https://verdebooks.com:7900/api/';
+    const apiUrl = 'https://verdebooks-backend.vercel.app/api/';
 
     this.http.get(apiUrl).subscribe(
       (response) => {
@@ -27,8 +27,8 @@ export class UserService {
     );
     console.log("nisa")
 
-    var res = this.http.get("https://verdebooks.com:7900/api/")
-    // https://verdebooks.com:7900/api/allEmployees
+    var res = this.http.get("https://verdebooks-backend.vercel.app/api/")
+    // https://verdebooks-backend.vercel.app/api/allEmployees
     console.log(res);
     console.log("hi/");
   }
@@ -40,10 +40,10 @@ export class UserService {
     this.company_id = await this.storage.get('companyid')
     console.log(data, this.company_id);
     if(data == "y8hr"){ 
-      result = "https://verdebooks.com:7900/api/";
+      result = "https://verdebooks-backend.vercel.app/api/";
       console.log(result);
     }else{
-      result = "https://verdebooks.com:7900/api/";
+      result = "https://verdebooks-backend.vercel.app/api/";
       console.log(result);
     }
     return result;
@@ -57,7 +57,7 @@ export class UserService {
       const postData = new FormData();
       postData.append('email' , email);
       postData.append('password' , pass);
-      return this.http.post('https://verdebooks.com:7900/api/login', postData);
+      return this.http.post('https://verdebooks-backend.vercel.app/api/login', postData);
   }
 
   setapi(){
@@ -152,15 +152,15 @@ export class UserService {
 
   getempchequelist(id){
     const postData = new FormData();
-    // postData.append('phone' , number);https://verdebooks.com:7900/api/employeeStubList/<id>
-    // https://verdebooks.com:7900/api/employeeProfile/<id>
+    // postData.append('phone' , number);https://verdebooks-backend.vercel.app/api/employeeStubList/<id>
+    // https://verdebooks-backend.vercel.app/api/employeeProfile/<id>
     return this.http.post(this.url + 'employeeStubList/'+id, postData);
   }
 
   getempdetail(id){
     const postData = new FormData();
     // postData.append('phone' , number);
-    // https://verdebooks.com:7900/api/employeeProfile/<id>
+    // https://verdebooks-backend.vercel.app/api/employeeProfile/<id>
     return this.http.post(this.url + 'employeeProfile/'+id, postData);
   }
 
@@ -172,7 +172,7 @@ export class UserService {
 
   allpaychque(){
     const postData = new FormData();
-    // postData.append('phone' , number);https://verdebooks.com:7900/api/payChequeList
+    // postData.append('phone' , number);https://verdebooks-backend.vercel.app/api/payChequeList
     return this.http.post(this.url + 'payChequeList', postData);
   }
 
