@@ -17,19 +17,26 @@ export class LandingPage implements OnInit {
   login_loader: Boolean = false;
   loginpress: Boolean = false;
   constructor(public toastController: ToastController,private storage: Storage,public userservice: UserService,private router: Router, private route: ActivatedRoute,public navCtrl: NavController) {
+}
 
-  }
   async ngOnInit() {
+    const isLoggedIn = await this.storage.get('login');
+
+    if (isLoggedIn) {
+      // User is already logged in, redirect to payrol directly
+      this.navCtrl.navigateForward(['payrol']);
+    } else {
     const queryParams = this.route.snapshot.queryParams;
     if (queryParams['email'] && queryParams['password']) {
       this.email = queryParams['email'];
       this.pass = queryParams['password'];
       this.signin();
     } else {
-      console.log("hello nisa do login")
+      console.log("hello do login")
       // this.router.navigate(['/signin']);
     }
   }
+}
 
   signin() {
     debugger

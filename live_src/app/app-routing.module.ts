@@ -31,7 +31,7 @@ const routes: Routes = [
   {
     path: 'payrol',
     loadChildren: () => import('./payrol/payrol.module').then( m => m.PayrolPageModule),
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'addemp',
