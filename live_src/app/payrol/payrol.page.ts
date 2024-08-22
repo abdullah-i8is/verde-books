@@ -27,6 +27,7 @@ export class PayrolPage implements OnInit {
 
 
   async ngOnInit() {
+    // hello Nim
       this.login_loader = true;
       const isLoggedIn = await this.storage.get('login');
   
