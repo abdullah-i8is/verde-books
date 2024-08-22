@@ -30,7 +30,7 @@ export class PayrolPage implements OnInit {
     // hello Nim
       this.login_loader = true;
       const isLoggedIn = await this.storage.get('login');
-  
+
       if (isLoggedIn) {
         // User is already logged in, redirect to payrol directly
         this.login_loader = false;

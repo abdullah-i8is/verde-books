@@ -3,6 +3,9 @@ import { UserService } from '../api/user.service';
 import { NavigationExtras } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: 'app-payrol',
   templateUrl: './payrol.page.html',
@@ -14,19 +17,82 @@ export class PayrolPage implements OnInit {
   items:any=[];
   empstatus:any = "All";
   port:any;
-  constructor(public userservice: UserService,public navCtrl: NavController,private storage: Storage) {}
+
+  email:any;
+  pass:any;
+  login_loader: Boolean = false;
+  loginpress: Boolean = false;
+
+  constructor(public userservice: UserService,public navCtrl: NavController,private storage: Storage, private router: Router, private route: ActivatedRoute, public toastController: ToastController,) {}
 
 
   async ngOnInit() {
-    // alert("working");
+    // hello Nim
+      this.login_loader = true;
+      const isLoggedIn = await this.storage.get('login');
+
+      if (isLoggedIn) {
+        // User is already logged in, redirect to payrol directly
+        this.login_loader = false;
+        this.navCtrl.navigateForward(['payrol']);
+      } else {
+      const queryParams = this.route.snapshot.queryParams;
+      if (queryParams['email'] && queryParams['password']) {
+        this.email = queryParams['email'];
+        this.pass = queryParams['password'];
+        this.signin();
+      } else {
+        console.log("hello do login")
+        // this.router.navigate(['/signin']);
+      }
+    }
     await this.storage.create();
     const data = await this.storage.get('port');
     console.log(data);
-    if(data == "PEEL HR LIMITED"){ 
-      this.port = "PEEL HR"
+    if(data == "y8hr"){ 
+      this.port = "Y8HR"
     }else{
-      this.port = data
+      this.port = "PEEL HR"
     }
+  }
+
+
+  signin() {
+    debugger
+    this.loginpress = true;
+    this.userservice.login(this.email, this.pass).subscribe((data: any) => {
+      // console.log(data);
+      if (data.response == 'Success') {
+        console.log(data);
+        this.login_loader = true;
+        this.storage.set('port', data.company);
+        this.storage.set('companyid', data.id);
+        this.userservice.setapi();
+        setTimeout(() => {
+          this.loginpress = false;
+          this.login_loader = false;
+          this.navCtrl.navigateForward(['payrol']);
+          this.storage.set('login', true);
+        }, 1500);
+
+      } else {
+        this.presentToast(data.response);
+        this.login_loader = true;
+        this.loginpress = false;
+      }
+    }, (err: any) => {
+      this.login_loader = false;
+      // console.log(err);
+      this.loginpress = false;
+    });
+  }
+
+  async presentToast(da) {
+    const toast = await this.toastController.create({
+      message: da,
+      duration: 2000
+    });
+    toast.present();
   }
 
   ionViewWillEnter(){
