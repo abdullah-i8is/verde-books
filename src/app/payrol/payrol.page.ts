@@ -65,6 +65,7 @@ export class PayrolPage implements OnInit {
       if (data.response == 'Success') {
         console.log(data);
         this.login_loader = true;
+        this.port = data.company;
         this.storage.set('port', data.company);
         this.storage.set('companyid', data.id);
         this.userservice.setapi();
