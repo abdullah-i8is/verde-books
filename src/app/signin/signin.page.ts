@@ -18,7 +18,7 @@ export class SigninPage implements OnInit {
   async ngOnInit() {
     await this.storage.create();
     this.storage.set('login', false);
-    this.storage.set('port', 'peelhr');
+    // this.storage.set('port', 'peelhr');
   }
    ionViewWillEnter(){
     console.log("working");

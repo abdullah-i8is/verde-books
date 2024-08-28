@@ -14,7 +14,7 @@ export class LandingPage implements OnInit {
   async ngOnInit() {
      await this.storage.create();
     this.storage.set('login', false);
-    this.storage.set('port', 'peelhr');
+    // this.storage.set('port', 'peelhr');
   }
   navigateToSignIn() {
     console.log("hello nisa")
