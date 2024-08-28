@@ -49,12 +49,12 @@ export class PayrolPage implements OnInit {
     }
     await this.storage.create();
     const data = await this.storage.get('port');
-    // console.log(data);
-    // if(data == "y8hr"){ 
-    //   this.port = "Y8HR"
-    // }else{
-    //   this.port = data
-    // }
+    console.log(data);
+    if(data == "y8hr"){ 
+      this.port = "Y8HR"
+    }else{
+      this.port = data
+    }
   }
 
 
