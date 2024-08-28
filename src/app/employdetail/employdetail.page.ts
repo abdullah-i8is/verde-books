@@ -41,7 +41,7 @@ export class EmploydetailPage implements OnInit {
         if(data == "y8hr"){ 
           this.port = "7800"
         }else{
-          this.port = "7900"
+          this.port = data
         } 
     console.log(this.port);    
   }

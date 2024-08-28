@@ -26,7 +26,7 @@ export class DonePage implements OnInit {
     if(this.organization == "y8hr"){ 
       this.port = "7800"
     }else{
-      this.port = "7900"
+      this.port = this.organization
     }
     this.onrun(); 
   } 

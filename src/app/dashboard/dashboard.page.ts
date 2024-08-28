@@ -35,7 +35,7 @@ export class DashboardPage implements OnInit {
     if(data == "y8hr"){ 
       this.port = "Y8HR"
     }else{
-      this.port = "PEEL HR"
+      this.port = data
     }
     this.getallpdfs()
   }
