@@ -30,13 +30,14 @@ export class PayrolPage implements OnInit {
     // hello Nim
       this.login_loader = true;
       const isLoggedIn = await this.storage.get('login');
+      const queryParams = this.route.snapshot.queryParams;
+      const existEmail = await this.storage.get('email');
 
-      if (isLoggedIn) {
+      if (existEmail == queryParams['email']) {
         // User is already logged in, redirect to payrol directly
         this.login_loader = false;
         this.navCtrl.navigateForward(['payrol']);
       } else {
-      const queryParams = this.route.snapshot.queryParams;
       if (queryParams['email'] && queryParams['password']) {
         this.email = queryParams['email'];
         this.pass = queryParams['password'];
@@ -66,6 +67,7 @@ export class PayrolPage implements OnInit {
         console.log(data);
         this.login_loader = true;
         this.port = data.company;
+        this.storage.set('email', this.email);
         this.storage.set('port', data.company);
         this.storage.set('companyid', data.id);
         this.userservice.setapi();
