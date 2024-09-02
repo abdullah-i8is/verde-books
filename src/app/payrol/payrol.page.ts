@@ -32,8 +32,9 @@ export class PayrolPage implements OnInit {
       const isLoggedIn = await this.storage.get('login');
       const queryParams = this.route.snapshot.queryParams;
       const existEmail = await this.storage.get('email');
+      const Authloginvalue = await this.storage.get('login');
 
-      if (existEmail && (existEmail == queryParams['email'])) {
+      if (Authloginvalue == true && existEmail && (existEmail == queryParams['email'])) {
         // User is already logged in, redirect to payrol directly
         this.login_loader = false;
         this.navCtrl.navigateForward(['payrol']);
